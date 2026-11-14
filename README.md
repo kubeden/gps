@@ -5,7 +5,7 @@ chat and sent, and the chat box closes. No keyboard, no pause in play.
 
 Two parts:
 
-- `addon/GamepadSpeak` runs inside WoW Forever (the `_classic_beta_` client).
+- `addon/GamepadSpeak` runs inside WoW Forever (the `_forever_` client).
   It owns the settings, shows a small "Recording / Transcribing" indicator,
   opens the chat box at the right moment, and closes it after the text is sent.
 - `helper/` is a small Python program that runs next to the game on macOS,
@@ -137,7 +137,7 @@ restores as soon as they do and says so in chat.
 --silent               no beeps
 --max-seconds 60       auto-stop a forgotten recording
 --any-app              type even if WoW is not in the foreground (testing)
---wow-dir PATH         the _classic_beta_ folder if not in the default place
+--wow-dir PATH         the _forever_ folder if not in the default place
 --check                print status and exit
 ```
 

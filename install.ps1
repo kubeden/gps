@@ -1,6 +1,6 @@
 # Windows: copy the addon into WoW Forever and prepare the helper environment.
 $ErrorActionPreference = "Stop"
-$WowDir = if ($env:WOW_DIR) { $env:WOW_DIR } else { "C:\Program Files (x86)\World of Warcraft\_classic_beta_" }
+$WowDir = if ($env:WOW_DIR) { $env:WOW_DIR } else { "C:\Program Files (x86)\World of Warcraft\_forever_" }
 $Addons = Join-Path $WowDir "Interface\AddOns"
 New-Item -ItemType Directory -Force -Path $Addons | Out-Null
 $Target = Join-Path $Addons "GamepadSpeak"
