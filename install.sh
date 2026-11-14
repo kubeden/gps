@@ -2,7 +2,7 @@
 # macOS / Linux: link the addon into WoW Forever and prepare the helper environment.
 set -e
 cd "$(dirname "$0")"
-WOW_DIR="${WOW_DIR:-/Applications/World of Warcraft/_classic_beta_}"
+WOW_DIR="${WOW_DIR:-/Applications/World of Warcraft/_forever_}"
 ADDONS="$WOW_DIR/Interface/AddOns"
 mkdir -p "$ADDONS"
 # A real copy, not a symlink: WoW Forever did not load SavedVariables for a symlinked addon folder.

@@ -49,16 +49,16 @@ def log(text: str) -> None:
 
 def default_wow_dir() -> Path:
     if SYSTEM == "Darwin":
-        return Path("/Applications/World of Warcraft/_classic_beta_")
+        return Path("/Applications/World of Warcraft/_forever_")
     if SYSTEM == "Windows":
         for base in (os.environ.get("ProgramFiles(x86)", r"C:\Program Files (x86)"),
                      os.environ.get("ProgramFiles", r"C:\Program Files")):
-            p = Path(base) / "World of Warcraft" / "_classic_beta_"
+            p = Path(base) / "World of Warcraft" / "_forever_"
             if p.exists():
                 return p
-        return Path(r"C:\Program Files (x86)\World of Warcraft\_classic_beta_")
+        return Path(r"C:\Program Files (x86)\World of Warcraft\_forever_")
     # Linux: Wine/Lutris/Steam prefixes vary; the user passes --wow-dir.
-    return Path.home() / "Games" / "world-of-warcraft" / "drive_c" / "Program Files (x86)" / "World of Warcraft" / "_classic_beta_"
+    return Path.home() / "Games" / "world-of-warcraft" / "drive_c" / "Program Files (x86)" / "World of Warcraft" / "_forever_"
 
 
 @dataclass(frozen=True)
@@ -629,7 +629,7 @@ def run_check(args) -> None:
 
 def main() -> None:
     ap = argparse.ArgumentParser(description="GamepadSpeak helper: controller-triggered voice to WoW chat")
-    ap.add_argument("--wow-dir", default=str(default_wow_dir()), help="WoW flavor directory (the _classic_beta_ folder)")
+    ap.add_argument("--wow-dir", default=str(default_wow_dir()), help="WoW flavor directory (the _forever_ folder)")
     ap.add_argument("--button", help="Override the trigger button from the addon, e.g. PADSOCIAL")
     ap.add_argument("--raw-button", type=int, help="Use a raw joystick button index instead of an SDL mapping")
     ap.add_argument("--language", help="Speech language code, e.g. en or bg (default: auto-detect)")
